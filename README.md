@@ -1,6 +1,6 @@
 # learn-trpc
 
-A simple project demonstrating the usage of tRPC with TypeScript, showcasing end-to-end type safety between the client and server.
+A simple monorepo project demonstrating the usage of tRPC with TypeScript, showcasing end-to-end type safety between the client and server.
 
 ## Features
 
@@ -9,6 +9,8 @@ A simple project demonstrating the usage of tRPC with TypeScript, showcasing end
 - 🚀 Vite for fast development and building
 - 📝 Example procedures including queries, mutations, and subscriptions
 - ⏱️ Simulated API delays for realistic testing
+- 🏗️ Monorepo setup with Turborepo for efficient build system
+- 📦 Workspace management with pnpm
 
 ## Getting Started
 
@@ -34,17 +36,13 @@ pnpm install
 
 ### Development
 
-1. Start the tRPC server:
-
-```bash
-pnpm tsx src/server/index.ts
-```
-
-2. In a separate terminal, start the Vite development server:
+Start all packages in development mode:
 
 ```bash
 pnpm dev
 ```
+
+This will start both the client and server in development mode using Turborepo's pipeline.
 
 The servers will be available at:
 
@@ -55,14 +53,16 @@ The servers will be available at:
 
 ```
 learn-trpc/
-├── src/
-│   ├── server/         # tRPC server implementation
-│   │   ├── index.ts    # Server entry point and router definitions
-│   │   └── trpc.ts     # tRPC context and procedure setup
-│   ├── main.ts         # Client entry point
-│   └── style.css       # Styles
-├── package.json
-└── tsconfig.json
+├── packages/
+│   ├── client/        # Frontend Vite application
+│   │   ├── src/       # Client source code
+│   │   └── package.json
+│   └── server/        # tRPC server implementation
+│       ├── src/       # Server source code
+│       └── package.json
+├── package.json       # Root package.json with Turborepo setup
+├── turbo.json        # Turborepo configuration
+└── pnpm-workspace.yaml # pnpm workspace configuration
 ```
 
 ## Available API Endpoints
@@ -80,6 +80,8 @@ The project includes several example tRPC procedures:
 - [TypeScript](https://www.typescriptlang.org/) - Type safety
 - [Vite](https://vitejs.dev/) - Frontend tooling
 - [Zod](https://zod.dev/) - Runtime type validation
+- [Turborepo](https://turbo.build/) - High-performance build system
+- [pnpm](https://pnpm.io/) - Fast, disk space efficient package manager
 
 ## License
 
