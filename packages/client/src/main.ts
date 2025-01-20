@@ -1,4 +1,4 @@
-import type { AppRouter } from "../../server/src";
+import type { AppRouter } from "@learn-trpc/server";
 import {
   createTRPCClient,
   httpBatchLink,
