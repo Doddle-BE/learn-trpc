@@ -1,10 +1,10 @@
+import type { AppRouter } from "../../server/src";
 import {
   createTRPCClient,
   httpBatchLink,
   splitLink,
   unstable_httpSubscriptionLink,
 } from "@trpc/client";
-import { AppRouter } from "./server/index.ts";
 import "./style.css";
 
 // Create regular HTTP client
@@ -48,7 +48,7 @@ const countElement = document.querySelector<HTMLSpanElement>("#count")!;
 
 // Create SSE subscription
 const subscription = trpc.onCount.subscribe(undefined, {
-  onStarted: (opts) => {
+  onStarted: () => {
     console.log("Started listening to count updates");
   },
   onData: (count) => {
