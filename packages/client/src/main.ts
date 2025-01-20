@@ -1,4 +1,4 @@
-import type { AppRouter } from "@learn-trpc/server";
+import type { AppRouter } from "../../server/src";
 import {
   createTRPCClient,
   httpBatchLink,
@@ -48,7 +48,7 @@ const countElement = document.querySelector<HTMLSpanElement>("#count")!;
 
 // Create SSE subscription
 const subscription = trpc.onCount.subscribe(undefined, {
-  onStarted: (opts) => {
+  onStarted: () => {
     console.log("Started listening to count updates");
   },
   onData: (count) => {
