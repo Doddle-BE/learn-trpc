@@ -1,10 +1,10 @@
+import type { AppRouter } from "@learn-trpc/server";
 import {
   createTRPCClient,
   httpBatchLink,
   splitLink,
   unstable_httpSubscriptionLink,
 } from "@trpc/client";
-import { AppRouter } from "./server/index.ts";
 import "./style.css";
 
 // Create regular HTTP client

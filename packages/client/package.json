@@ -1,0 +1,20 @@
+{
+  "name": "@learn-trpc/client",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@trpc/client": "11.0.0-rc.700",
+    "@learn-trpc/server": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.7",
+    "typescript": "~5.6.2",
+    "vite": "^6.0.5"
+  }
+}
