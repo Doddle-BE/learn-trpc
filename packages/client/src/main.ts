@@ -22,9 +22,11 @@ const trpc = createTRPCClient<AppRouter>({
   ],
 });
 
-const helloToTheWorld = await trpc.helloToTheWorld.query();
-const helloToJack = await trpc.helloToWho.query("Jack");
-const helloToJohn = await trpc.helloWWithMutation.mutate("John");
+const [helloToTheWorld, helloToJack, helloToJohn] = await Promise.all([
+  trpc.helloToTheWorld.query(),
+  trpc.helloToWho.query("Jack"),
+  trpc.helloWWithMutation.mutate("John"),
+]);
 
 document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
   <div>
