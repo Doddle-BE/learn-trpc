@@ -10,12 +10,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@trpc/client": "11.0.0-rc.700",
-    "@learn-trpc/server": "workspace:*"
+    "@learn-trpc/server": "workspace:*",
+    "@trpc/client": "11.17.0"
   },
   "devDependencies": {
-    "@types/node": "^22.10.7",
-    "typescript": "~5.6.2",
-    "vite": "^6.0.5"
+    "@types/node": "^25.7.0",
+    "typescript": "~6.0.3",
+    "vite": "^8.0.12"
   }
 }
